@@ -6,9 +6,11 @@ The gem has been updated and some bugs have been fixed along the way.
 
 ## Requirements
 
-Currently it is working with Rails >= 3.2 and ruby version >= 1.9, if
-you need this gem for another set of version, please let me know, and
-I will gladly implement it for you
+Currently it is working with Rails >= 3.2 and ruby version >= 1.9. 
+
+**If you need this gem for another combination of versions, please
+  [create an issue](https://github.com/softace/trim_blobs/issues/new)
+  specifying which version combination you are intereested in.**
 
 ## Installation
 
