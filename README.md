@@ -28,7 +28,7 @@ Or install it yourself as:
 
 There is basically no usage. The result of using this gem can be seen in the log files where long lines of hexadecimal number have been replaced with a text like
 
-    \x89504e470d0a1a0a0000000d49484452... (TRIMMED 34924 characters)
+    \x89504e470d0a1a0a0000000d49484452... (TRIMMED 34924 hexadecimal digits)
 
 ## Contributing
 
