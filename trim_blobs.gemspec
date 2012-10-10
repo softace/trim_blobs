@@ -18,7 +18,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.required_ruby_version(">= 1.9.0") #There is known issue with ruby 1.8, that prevents this gem on ruby 1.8, see http://bugs.ruby-lang.org/issues/show/1167
+  gem.required_ruby_version = ">= 1.9.0" #There is known issue with ruby 1.8, that prevents this gem on ruby 1.8, see http://bugs.ruby-lang.org/issues/show/1167
   gem.add_dependency('activerecord', '>= 3.2.0')
 
   gem.add_development_dependency('bundler')

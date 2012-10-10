@@ -1,8 +1,16 @@
-module TrimBlobs::ActiveRecord::ConnectionAdapters::AbstractAdapter
-  def log_with_blobs_trimmed(sql, name, &block)
-    sql = sql.gsub(/x'([^']+)'/) do |blob|
-      blob.size > 32 ? "x'#{$1[0,32]}... (#{blob.size} bytes)'" : $0
-    end if sql
-    log_without_blobs_trimmed(sql, name, &block)
+module TrimBlobs
+  module ActiveRecord
+    module ConnectionAdapters
+      module AbstractAdapter
+        def log_with_blobs_trimmed(sql, name = "SQL", binds = [])
+          if sql
+            sql = sql.gsub(/'\\x((?:[0-9a-f]{2})+)'/) do |blob|
+              (blob.size > 32) ? "'\\x#{$1[0,32]}... (TRIMMED #{blob.size} hexadecimal digits)'" : $&
+            end
+          end
+          log_without_blobs_trimmed(sql, name, binds){ yield }
+        end
+      end
+    end
   end
 end
